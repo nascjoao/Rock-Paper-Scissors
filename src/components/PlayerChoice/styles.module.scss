@@ -23,6 +23,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 566px) {
+    width: 10rem;
+    height: 10rem;
+  }
   
   &.human {
     background-color: rgb(32, 83, 170);
@@ -49,4 +54,8 @@
 
 .playerChoice {
   font-size: 8rem;
+
+  @media screen and (max-width: 566px) {
+    font-size: 5rem;
+  }
 }
