@@ -1,6 +1,7 @@
-import PlayerChoice from "./PlayerChoice"
-import getMachineChoice from "../helpers/getMachineChoice"
 import { useEffect, useState } from "react"
+import PlayerChoice from "../PlayerChoice"
+import getMachineChoice from "../../helpers/getMachineChoice"
+import style from './styles.module.scss'
 
 interface CounterPicks {
   '✊': string;
@@ -50,19 +51,23 @@ export default function Game(): JSX.Element {
   }, [playerChoice, machineChoice])
 
   return (
-    <>
-      <h1>Você: {score.player}</h1>
-      <h1>Máquina: {score.machine}</h1>
+    <div className={style.game}>
+      <header className={style.score}>
+        <strong>Você: {score.player}</strong>
+        <strong>Máquina: {score.machine}</strong>
+      </header>
       { showWinner !== '' && (
-        <h1>{showWinner} ganhou!</h1>
+        <strong className={style.winner}>{showWinner} ganhou!</strong>
       ) }
-      <div style={{ display: 'flex', gap: '5rem' }}>
+      <div className={style.playerChoiceContainer}>
         <PlayerChoice choice={playerChoice} />
         <PlayerChoice machine choice={machineChoice} />
       </div>
-      <button onClick={chooseOption}>✊</button>
-      <button onClick={chooseOption}>✌️</button>
-      <button onClick={chooseOption}>🖐</button>
-    </>
+      <section className={style.options}>
+        <button onClick={chooseOption}>✊</button>
+        <button onClick={chooseOption}>✌️</button>
+        <button onClick={chooseOption}>🖐</button>
+      </section>
+    </div>
   )
 }

@@ -1,0 +1,87 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  
+  .score {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    width: 100%;
+    max-width: calc(528px + 4rem);
+    font-size: 1.3rem;
+    color: black;
+    text-shadow: 2px 3px 40px rgb(32, 83, 170);
+
+    strong {
+      background: white;
+      border-radius: 99px;
+      padding: .5rem 1.2rem;
+      border: 2px solid #ccc;
+    }
+  }
+
+  .playerChoiceContainer {
+    display: flex;
+    gap: 5rem;
+
+    @media screen and (max-width: 566px) {
+      gap: 3rem;
+    }
+
+    @media screen and (max-width: 440px) {
+      gap: 2rem;
+    }
+
+    @media screen and (max-width: 415px) {
+      gap: 1rem;
+    }
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 528px;
+    padding: 0 2rem;
+
+    button {
+      font-size: 4rem;
+      background: #eee;
+      border: none;
+      border-radius: 10px 10px 0 0;
+      cursor: pointer;
+      padding: 1rem;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(10%);
+      opacity: 0;
+    } 50% {
+      transform: translateY(0%);
+      opacity: 1;
+    } 100% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+  }
+  .winner {
+    animation: slideUp 500ms cubic-bezier(.47,0,.74,.71) forwards;
+    font-size: 3rem;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    -webkit-text-stroke: 1px rgba(32, 83, 170, .4);
+    text-shadow: 2px 3px 40px rgb(32, 83, 170);
+    font-family: sans-serif;
+  }
+}
