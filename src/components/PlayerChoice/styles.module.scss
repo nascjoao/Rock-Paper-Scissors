@@ -1,0 +1,52 @@
+@keyframes choosing {
+  from {
+    transform: rotate(-45deg);
+  } to {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes humanChoosing {
+  from {
+    transform: rotate(45deg) rotateY(180deg);
+  } to {
+    transform: rotate(-45deg) rotateY(180deg);
+  }
+}
+
+.container {
+  background-color: #eee;
+  border: 7px solid #ccc;
+  border-radius: 50%;
+  width: 14rem;
+  height: 14rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &.human {
+    background-color: rgb(32, 83, 170);
+    border: 7px solid rgb(17, 56, 114);
+  }
+  
+  .choosing {
+    animation: choosing infinite 200ms alternate;
+    
+    &.human {
+      animation: humanChoosing infinite 200ms alternate;
+    }
+  }
+  
+  .chose {
+    transform: rotate(-90deg);
+
+    &.human {
+      transform: rotate(90deg) rotateY(180deg);
+    }
+  }
+  
+}
+
+.playerChoice {
+  font-size: 8rem;
+}
