@@ -1,16 +1,16 @@
 @keyframes choosing {
   from {
-    transform: rotate(-45deg);
+    transform: rotate(-5deg);
   } to {
-    transform: rotate(45deg);
+    transform: rotate(5deg);
   }
 }
 
 @keyframes humanChoosing {
   from {
-    transform: rotate(45deg) rotateY(180deg);
+    transform: rotate(5deg) rotateY(180deg);
   } to {
-    transform: rotate(-45deg) rotateY(180deg);
+    transform: rotate(-5deg) rotateY(180deg);
   }
 }
 
@@ -30,10 +30,10 @@
   }
   
   .choosing {
-    animation: choosing infinite 200ms alternate;
+    animation: choosing infinite 90ms alternate;
     
     &.human {
-      animation: humanChoosing infinite 200ms alternate;
+      animation: humanChoosing infinite 90ms alternate;
     }
   }
   
