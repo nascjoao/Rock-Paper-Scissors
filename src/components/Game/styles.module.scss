@@ -1,9 +1,7 @@
 .game {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
   
   .score {
     display: flex;
@@ -14,6 +12,7 @@
     font-size: 1.3rem;
     color: black;
     text-shadow: 2px 3px 40px rgb(32, 83, 170);
+    margin: 0 auto;
 
     strong {
       background: white;
@@ -26,6 +25,10 @@
   .playerChoiceContainer {
     display: flex;
     gap: 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     @media screen and (max-width: 566px) {
       gap: 3rem;
@@ -41,6 +44,10 @@
   }
   
   .options {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 0;
     display: flex;
     justify-content: space-between;
     width: 100%;
